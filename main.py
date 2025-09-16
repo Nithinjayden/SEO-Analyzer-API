@@ -150,3 +150,11 @@ def metadata(url: str = Query(..., description="URL of the page to analyze")):
         "meta": data["meta"],
         "headings": data["headings"],
     }
+
+@app.get("/")
+def health_check():
+    return {
+        "status": "ok",
+        "message": "Ultimate SEO Analyzer API is running",
+        "endpoints": ["/analyze", "/quick-score", "/metadata", "/docs"]
+    }
