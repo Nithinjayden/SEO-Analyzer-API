@@ -8,7 +8,7 @@
 A professional **SEO analysis API** that helps developers, marketers, and businesses analyze any website in seconds.  
 Get insights about titles, meta tags, headings, links, images, keyword density, page load time, SEO warnings, and an overall SEO score.
 
-![SEO Analyzer Banner](Logo.png)
+![SEO Analyzer Logo](Logo.png)
 
 ---
 
