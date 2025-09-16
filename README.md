@@ -1,6 +1,6 @@
 # 🚀 Ultimate SEO Analyzer API
 
-[![RapidAPI](https://img.shields.io/badge/Get%20on-RapidAPI-00bfff?logo=cloudflare&logoColor=white)](https://rapidapi.com/)  
+[![RapidAPI](https://img.shields.io/badge/Get%20on-RapidAPI-00bfff?logo=cloudflare&logoColor=white)](https://rapidapi.com/KovalDenys1/api/ultimate-seo-analyzer)  
 [![Python](https://img.shields.io/badge/Python-3.9+-3776AB?logo=python&logoColor=white)](https://www.python.org/)  
 [![FastAPI](https://img.shields.io/badge/FastAPI-Framework-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)  
 [![License](https://img.shields.io/badge/License-Proprietary-red)](#-license)
@@ -78,7 +78,7 @@ GET /analyze?url=https://example.com
 - **Basic** → 500 requests/day – $5/month  
 - **Pro** → 2000 requests/day – $20/month  
 
-👉 [Subscribe on RapidAPI](https://rapidapi.com/)
+👉 [Subscribe on RapidAPI]([https://rapidapi.com/](https://rapidapi.com/KovalDenys1/api/ultimate-seo-analyzer))
 
 ---
 
