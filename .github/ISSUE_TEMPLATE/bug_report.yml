@@ -1,0 +1,98 @@
+name: "🐞 Bug report"
+description: "Report a reproducible problem in Ultimate SEO Analyzer API"
+title: "[Bug]: <short summary>"
+labels: ["bug"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a bug! Please fill out the fields below so we can reproduce and fix it faster.
+  - type: dropdown
+    id: endpoint
+    attributes:
+      label: Affected endpoint
+      options:
+        - /analyze
+        - /quick-score
+        - /metadata
+        - other
+    validations:
+      required: true
+  - type: input
+    id: target_url
+    attributes:
+      label: URL being analyzed (if applicable)
+      description: Provide a real URL you tested with
+      placeholder: "https://example.com"
+  - type: dropdown
+    id: client
+    attributes:
+      label: Client / Tool
+      options:
+        - cURL
+        - Postman
+        - RapidAPI Playground
+        - Node.js (fetch/axios)
+        - Python (requests/httpx)
+        - Other
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: Include precise steps and a request snippet if possible.
+      placeholder: |
+        1. Call POST /analyze with body: {...}
+        2. Observe response 500
+        3. ...
+      render: bash
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      placeholder: What did you expect to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      placeholder: What happened instead? Include response status and body if relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / Response samples
+      description: Paste any relevant logs, error messages, or JSON responses.
+      render: JSON
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - low
+        - medium
+        - high
+        - critical
+    validations:
+      required: true
+  - type: checkboxes
+    id: regression
+    attributes:
+      label: Is this a regression?
+      options:
+        - label: "Yes, it worked before"
+        - label: "No / Not sure"
+  - type: input
+    id: version
+    attributes:
+      label: API version (if not latest)
+      placeholder: "latest"
+  - type: textarea
+    id: extra
+    attributes:
+      label: Additional context / screenshots
+      description: Add any other context or screenshots about the problem here.
