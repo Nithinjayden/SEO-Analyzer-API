@@ -6,14 +6,14 @@ from collections import Counter
 import time
 import re
 
-app = FastAPI(title="Ultimate SEO Analyzer API", version="4.0")
+app = FastAPI(title="Ultimate SEO Analyzer API", version="5.0")
 
 cache = {}
 CACHE_EXPIRY = 300
 
+
 def get_links(soup, base_url):
-    internal_links = []
-    external_links = []
+    internal_links, external_links = [], []
     for link in soup.find_all("a", href=True):
         href = link['href']
         if href.startswith('#'):
@@ -25,6 +25,7 @@ def get_links(soup, base_url):
             external_links.append(full_url)
     return {"internal": list(set(internal_links)), "external": list(set(external_links))}
 
+
 def get_img_alt_stats(soup):
     images = soup.find_all("img")
     total = len(images)
@@ -32,12 +33,14 @@ def get_img_alt_stats(soup):
     without_alt = total - with_alt
     return {"total": total, "with_alt": with_alt, "without_alt": without_alt}
 
+
 def get_word_density(text):
     words = re.findall(r'\w+', text.lower())
     counter = Counter(words)
     total_words = len(words)
     density = {word: round(count / total_words * 100, 2) for word, count in counter.items()} if total_words else {}
     return density
+
 
 def seo_warnings(title, meta_desc, h1, h2, images):
     warnings = []
@@ -57,15 +60,13 @@ def seo_warnings(title, meta_desc, h1, h2, images):
         warnings.append(f"{images['without_alt']} images are missing alt attribute")
     return warnings
 
+
 def seo_score(warnings):
-    score = 100 - len(warnings)*15
+    score = 100 - len(warnings) * 15
     return max(score, 0)
 
-def analyze_page(url):
-    current_time = time.time()
-    if url in cache and current_time - cache[url]["time"] < CACHE_EXPIRY:
-        return cache[url]["data"]
 
+def fetch_page(url):
     start = time.time()
     try:
         response = requests.get(url, timeout=10)
@@ -73,8 +74,16 @@ def analyze_page(url):
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"Error fetching page: {e}")
     load_time = int((time.time() - start) * 1000)
-
     soup = BeautifulSoup(response.text, "html.parser")
+    return soup, load_time
+
+
+def analyze_page(url):
+    current_time = time.time()
+    if url in cache and current_time - cache[url]["time"] < CACHE_EXPIRY:
+        return cache[url]["data"]
+
+    soup, load_time = fetch_page(url)
 
     title = soup.title.string.strip() if soup.title else ""
     meta_desc_tag = soup.find("meta", attrs={"name": "description"})
@@ -96,13 +105,10 @@ def analyze_page(url):
     result = {
         "url": url,
         "title": title,
-        "meta": {
-            "description": meta_desc,
-            "keywords": meta_keywords
-        },
+        "meta": {"description": meta_desc, "keywords": meta_keywords},
         "headings": {
             "h1": {"count": len(h1), "texts": h1},
-            "h2": {"count": len(h2), "texts": h2}
+            "h2": {"count": len(h2), "texts": h2},
         },
         "links": links,
         "images": images,
@@ -110,12 +116,37 @@ def analyze_page(url):
         "word_density_percent": word_density,
         "load_time_ms": load_time,
         "seo_warnings": warnings,
-        "seo_score": score
+        "seo_score": score,
     }
 
     cache[url] = {"data": result, "time": current_time}
     return result
 
+
 @app.get("/analyze")
 def analyze(url: str = Query(..., description="URL of the page to analyze")):
+    """Full SEO analysis (metadata, headings, links, images, keyword density, load time, score)"""
     return analyze_page(url)
+
+
+@app.get("/quick-score")
+def quick_score(url: str = Query(..., description="URL of the page to analyze")):
+    """Quick SEO score + warnings only"""
+    data = analyze_page(url)
+    return {
+        "url": data["url"],
+        "seo_score": data["seo_score"],
+        "seo_warnings": data["seo_warnings"],
+    }
+
+
+@app.get("/metadata")
+def metadata(url: str = Query(..., description="URL of the page to analyze")):
+    """Extract metadata and headings only"""
+    data = analyze_page(url)
+    return {
+        "url": data["url"],
+        "title": data["title"],
+        "meta": data["meta"],
+        "headings": data["headings"],
+    }
