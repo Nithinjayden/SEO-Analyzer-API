@@ -1,12 +1,12 @@
 # 🚀 Ultimate SEO Analyzer API
 
-[![RapidAPI](https://img.shields.io/badge/Get%20on-RapidAPI-00bfff?logo=cloudflare&logoColor=white)](https://rapidapi.com/KovalDenys1/api/ultimate-seo-analyzer)  
+[![RapidAPI](https://img.shields.io/badge/View%20on-RapidAPI-00bfff?logo=cloudflare&logoColor=white)](https://rapidapi.com/KovalDenys1/api/ultimate-seo-analyzer)  
 [![Python](https://img.shields.io/badge/Python-3.9+-3776AB?logo=python&logoColor=white)](https://www.python.org/)  
 [![FastAPI](https://img.shields.io/badge/FastAPI-Framework-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)  
 [![License](https://img.shields.io/badge/License-Proprietary-red)](#-license)
 
-A professional **SEO analysis API** that helps developers, marketers, and businesses analyze any website in seconds.  
-Get insights about titles, meta tags, headings, links, images, keyword density, page load time, SEO warnings, and an overall SEO score.
+**Ultimate SEO Analyzer API** is a web API built with FastAPI that provides SEO-related analysis of any given webpage.  
+It extracts metadata, headings, links, images, keyword density, page load time, SEO warnings, and calculates an overall SEO score.
 
 ![SEO Analyzer Logo](Logo.png)
 
@@ -20,8 +20,8 @@ Get insights about titles, meta tags, headings, links, images, keyword density, 
 - Measure **keyword density**  
 - Count **words** on the page  
 - Measure **page load time (ms)**  
-- Get **SEO warnings** (common issues)  
-- Overall **SEO score (0–100)**  
+- Detect **SEO warnings** (common issues)  
+- Calculate an **SEO score (0–100)**  
 
 ---
 
@@ -66,23 +66,19 @@ GET /analyze?url=https://example.com
 ---
 
 ## 📌 Use Cases
-- 🔎 SEO auditing tools  
-- 📊 Marketing dashboards  
-- 📝 Blog & content optimization  
-- ⏱ Automated SEO monitoring  
+- SEO auditing tools  
+- Marketing dashboards  
+- Content optimization  
+- Automated SEO monitoring  
 
 ---
 
-## 💳 Pricing
-- **Free** → 50 requests/day  
-- **Basic** → 500 requests/day – $5/month  
-- **Pro** → 2000 requests/day – $20/month  
-
-👉 [Subscribe on RapidAPI]([https://rapidapi.com/](https://rapidapi.com/KovalDenys1/api/ultimate-seo-analyzer))
+## 📦 Availability
+The API is accessible via [RapidAPI](https://rapidapi.com/KovalDenys1/api/ultimate-seo-analyzer), where Free, Basic, and Pro usage tiers are provided.
 
 ---
 
 ## ⚠️ License
 This repository is for **documentation purposes only**.  
 The API source code is **proprietary** and not open-source.  
-To use the API, please subscribe via **RapidAPI**.
+Usage is available through the RapidAPI platform.  
