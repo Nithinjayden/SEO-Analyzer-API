@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException, Query
+from models import AnalyzeResult, QuickScoreResult, MetadataResult, HealthCheck
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse, urljoin
@@ -123,38 +124,39 @@ def analyze_page(url):
     return result
 
 
-@app.get("/analyze")
-def analyze(url: str = Query(..., description="URL of the page to analyze")):
+@app.get("/analyze", response_model=AnalyzeResult)
+def analyze(url: str = Query(..., description="URL of the page to analyze")) -> AnalyzeResult:
     """Full SEO analysis (metadata, headings, links, images, keyword density, load time, score)"""
-    return analyze_page(url)
+    result = analyze_page(url)
+    return AnalyzeResult(**result)
 
 
-@app.get("/quick-score")
-def quick_score(url: str = Query(..., description="URL of the page to analyze")):
+@app.get("/quick-score", response_model=QuickScoreResult)
+def quick_score(url: str = Query(..., description="URL of the page to analyze")) -> QuickScoreResult:
     """Quick SEO score + warnings only"""
     data = analyze_page(url)
-    return {
-        "url": data["url"],
-        "seo_score": data["seo_score"],
-        "seo_warnings": data["seo_warnings"],
-    }
+    return QuickScoreResult(
+        url=data["url"],
+        seo_score=data["seo_score"],
+        seo_warnings=data["seo_warnings"],
+    )
 
 
-@app.get("/metadata")
-def metadata(url: str = Query(..., description="URL of the page to analyze")):
+@app.get("/metadata", response_model=MetadataResult)
+def metadata(url: str = Query(..., description="URL of the page to analyze")) -> MetadataResult:
     """Extract metadata and headings only"""
     data = analyze_page(url)
-    return {
-        "url": data["url"],
-        "title": data["title"],
-        "meta": data["meta"],
-        "headings": data["headings"],
-    }
+    return MetadataResult(
+        url=data["url"],
+        title=data["title"],
+        meta=data["meta"],
+        headings=data["headings"],
+    )
 
-@app.get("/")
-def health_check():
-    return {
-        "status": "ok",
-        "message": "Ultimate SEO Analyzer API is running",
-        "endpoints": ["/analyze", "/quick-score", "/metadata", "/docs"]
-    }
+@app.get("/", response_model=HealthCheck)
+def health_check() -> HealthCheck:
+    return HealthCheck(
+        status="ok",
+        message="Ultimate SEO Analyzer API is running",
+        endpoints=["/analyze", "/quick-score", "/metadata", "/docs"],
+    )
